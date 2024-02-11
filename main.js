@@ -13,6 +13,7 @@ const userNameEl = document.getElementById('user-name');
 const screenShareBtn = document.getElementById('screen-share');
 
 const urlParams = new URLSearchParams(window.location.search);
+const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}, {'urls': 'turn:freeturn.net:3478'}]}
 
 let userId;
 let userName;
@@ -371,7 +372,7 @@ const handleRemoveVideoElement = (pc, id, userName) => {
 }
 
 const createPeerConnection = (id, name) => {
-  pc[id] = new RTCPeerConnection();
+  pc[id] = new RTCPeerConnection(configuration);
   pc[id].onicecandidate = (e) => {
     const message = {
       type: 'candidate',
