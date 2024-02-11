@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peer To Peer Video Chat App</title>
+
+</head>
+<style>
+
+    #incomming-dialog::backdrop {
+        background-color: black;
+        opacity: 0.75;
+    }
+    
+    #name-dialog::backdrop{
+        background-color: black;
+    }
+
+    #notification-dialog {
+        display: none;
+        padding: 10px 15px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.245);
+        border-radius: 15px;
+        background-color: #afaf0457;
+    }
+</style>
+
+<body style="display: flex; flex-direction: column;">
+    <h4 id="user-name" style="text-align: center; margin-bottom: 10px;"></h4>
+    <div style="text-align: center; margin-bottom: 10px;">
+        <video style="max-width: 400px;" height="" id="localVideo" autoplay muted></video>
+        <div style="margin-bottom: 10px; margin-top: 10px;">
+            <button onclick="handleLocalStreamToggle('video', event)" style="margin-right: 10px;">Turn off video</button>
+            <button onclick="handleLocalStreamToggle('audio', event)">Turn off audio</button>
+            <button id="screen-share" onclick="handleScreenShare()">Screen Share</button>
+        </div>
+        <div id="action-container" style="text-align: center; margin-bottom: 10px; display: none;">
+            <button id="startBtn" onclick="startCall()">Start Call</button>
+            <button id="joinBtn" style="display: none;" onclick="joinCall()">Join Call</button>
+            <button id="endBtn" style="display: none;" onclick="conpleteEnd()">End Call</button>
+        </div>
+        <h1 id="greatting"></h1>
+    </div>
+
+
+    <div id="player-container" style="display: flex; flex-wrap: wrap;"></div>
+
+    <dialog id="incomming-dialog">
+        <h5>Incomming Call...</h5>
+        <p id="incomming-from"></p>
+        <div style="display: flex; justify-content: center;">
+            <button onclick="handleIncommingCallAnswer(true)" style="margin-right: 10px;">Accept</button>
+            <button onclick="handleIncommingCallAnswer(false)">Reject</button>
+        </div>
+    </dialog>
+
+    <dialog id="name-dialog">
+        <h5 style="text-align: center; margin-top: 0;">Please Enter Your Name To Enter In Chatroom!</h5>
+        <form onsubmit="handleAddName(event)">
+            <input id="name-field" type="text" required placeholder="Enter Your Name">
+            <input type="submit" value="Enter In ChatRoom">
+        </form>
+    </dialog>
+
+    <div id="notification-dialog">
+        <p id="notificaion-message"></p>
+    </dialog>
+    <script src="main.js" async></script>
+
+</body>
+
+</html>
