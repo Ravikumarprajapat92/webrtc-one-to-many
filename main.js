@@ -105,7 +105,7 @@ const handleDataChannelEvent = async (event) => {
 };
 
 const setupDataChannel = async () => {
-  var url = `ws://localhost:8080?room=${roomId}&streamName=${userId}`
+  var url = `wss://webrtc-one-to-many-server.onrender.com/?room=${roomId}&streamName=${userId}`
 
   signaling = new WebSocket(url);
 
