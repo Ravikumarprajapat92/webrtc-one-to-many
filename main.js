@@ -13,7 +13,7 @@ const userNameEl = document.getElementById('user-name');
 const screenShareBtn = document.getElementById('screen-share');
 
 const urlParams = new URLSearchParams(window.location.search);
-const configuration = {'iceServers': [{'urls': 'STUN:freeturn.net:3478'}, {'urls': 'TURN:freeturn.net:3478',username: 'free',
+const configuration = {'iceServers': [{'urls': 'stun:freeturn.net:3478'}, {'urls': 'turn:freeturn.net:3478',username: 'free',
             credential: 'free'}]}
 
 let userId;
