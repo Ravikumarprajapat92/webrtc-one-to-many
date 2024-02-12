@@ -13,8 +13,8 @@ const userNameEl = document.getElementById('user-name');
 const screenShareBtn = document.getElementById('screen-share');
 
 const urlParams = new URLSearchParams(window.location.search);
-const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}, {'urls': 'turn:freeturn.net:3478',username: 'free',
-            credential: 'free'}]}
+const configuration = {'iceServers': [{'urls': 'stun:stun.l.google.com:19302'}, {'urls': 'turn:openrelay.metered.ca:80',username: 'openrelayproject',
+            credential: 'openrelayproject'}]}
 
 let userId;
 let userName;
