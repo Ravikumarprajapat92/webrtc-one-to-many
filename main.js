@@ -361,6 +361,7 @@ const handleRemoveVideoElement = (pc, id, userName) => {
 
       vide.id = id
       vide.srcObject = e.streams[0];
+            vide.playsinline = true;
       vide.autoplay = true;
       if (id.includes('-screen')) {
         vide.controls = true;
