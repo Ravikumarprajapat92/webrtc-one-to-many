@@ -34,7 +34,7 @@
 <body style="display: flex; flex-direction: column;">
     <h4 id="user-name" style="text-align: center; margin-bottom: 10px;"></h4>
     <div style="text-align: center; margin-bottom: 10px;">
-        <video style="max-width: 400px;" height="" id="localVideo" autoplay muted></video>
+        <video style="max-width: 400px;" height="" id="localVideo" autoplay playsinline muted></video>
         <div style="margin-bottom: 10px; margin-top: 10px;">
             <button onclick="handleLocalStreamToggle('video', event)" style="margin-right: 10px;">Turn off video</button>
             <button onclick="handleLocalStreamToggle('audio', event)">Turn off audio</button>
